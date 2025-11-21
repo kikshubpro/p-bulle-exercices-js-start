@@ -10,7 +10,10 @@
  * @returns {Visitor} the visitor that was created
  */
 export function createVisitor(name, age, ticketId) {
-  throw new Error('Remove this line and implement the function');
+  name = name
+  age = age
+  ticketId = ticketId
+  return {name, age, ticketId}
 }
 
 /**

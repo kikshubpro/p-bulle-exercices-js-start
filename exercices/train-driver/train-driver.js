@@ -10,8 +10,8 @@
  * @param {...number} ids
  * @returns {number[]} wagon ids
  */
-export function getListOfWagons(a, b, c, d, e, f, g, h, i, j, k, l, m, n) {
-  throw new Error('Remove this line and implement the function');
+export function getListOfWagons(...ids) {
+  return [...ids]
 }
 
 /**
@@ -21,7 +21,11 @@ export function getListOfWagons(a, b, c, d, e, f, g, h, i, j, k, l, m, n) {
  * @returns {number[]} reordered list of wagons
  */
 export function fixListOfWagons(ids) {
-  throw new Error('Remove this line and implement the function');
+  // [ids] = [ids].splice([ids].length - 1, 0, [ids].splice(0, 2)[0])
+  // return [...ids]
+  // var tmp = [ids][0] ; [ids][1]
+  [ids] = [ids].slice(2), [ids].slice(0, 2)
+  return [...ids]
 }
 
 /**
@@ -32,7 +36,10 @@ export function fixListOfWagons(ids) {
  * @returns {number[]} corrected list of wagons
  */
 export function correctListOfWagons(ids, missingWagons) {
-  throw new Error('Remove this line and implement the function');
+  [missingWagons].forEach(element => {
+    [ids].push(element)
+  });
+  return [...ids]
 }
 
 /**

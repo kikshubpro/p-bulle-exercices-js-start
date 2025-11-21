@@ -16,14 +16,14 @@ import { order } from './grocer';
  * @return void
  */
 export function onSuccess() {
-  // implement the onSuccess callback to call notify with a success message
+  notify({message: "SUCCESS"})
 }
 
 /**
  * @return void
  */
 export function onError() {
-  // implement the onError callback to call notify with an error message
+  notify({message: "ERROR"})
 }
 
 /**
@@ -33,7 +33,14 @@ export function onError() {
  * @return void
  */
 export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
-  // implement the orderFromGrocer function to order the query
+  if (query.variety != "" && query.quantity != 0)
+  {
+    onSuccessCallback()
+  }
+  else
+  {
+    onErrorCallback()
+  }
 }
 
 /**

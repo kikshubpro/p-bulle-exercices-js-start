@@ -4,5 +4,5 @@
 //
 
 export const gigasecond = () => {
-  throw new Error('Remove this line and implement the function');
+  gigasecond + 1000000000
 };

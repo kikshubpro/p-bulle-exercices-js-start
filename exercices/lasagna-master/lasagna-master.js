@@ -10,3 +10,35 @@
  *   ...
  * }
  */
+
+/**
+ * @param {number} timeLeft
+ * @return {string}
+ */
+export function cookingStatus(timeLeft) {
+    if (timeLeft == 0)
+    {
+        return "Lasagna is done."
+    }
+    else if (timeLeft == null)
+    {
+        return "You forgot to set the timer."
+    }
+    else
+    {
+        return "Not done, please wait."
+    }
+}
+
+/**
+ * @param {number[]} layers
+ * @param {number} avgPrepTime
+ * @return {number}
+ */
+export function preparationTime(layers, avgPrepTime) {
+    if (avgPrepTime == null) {
+        avgPrepTime = 2
+    }
+
+    return layers.length * avgPrepTime
+}
