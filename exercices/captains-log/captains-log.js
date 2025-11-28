@@ -28,5 +28,3 @@ export function randomPlanetClass() {
   const planetsType = "DHJKLMNRTY"
   return planetsType.charAt(Math.floor(Math.random() * planetsType.length))
 }
-
-// D, H, J, K, L, M, N, R, T, and Y
