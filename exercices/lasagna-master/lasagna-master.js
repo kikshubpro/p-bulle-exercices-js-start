@@ -32,7 +32,6 @@ export function cookingStatus(timeLeft) {
 export function quantities(layers) {
   var nbLayerNoodles = 0;
   var nbLayerSauce = 0;
-  console.log(">>>>>>>>>>>>>>>");
   layers.forEach((layer) => {
     if (layer == "noodles") {
       nbLayerNoodles += 50;
@@ -67,4 +66,18 @@ export function preparationTime(layers, avgPrepTime) {
  */
 export function addSecretIngredient(friendsList, myList) {
   myList.push(friendsList[friendsList.length - 1]);
+}
+
+/**
+ * @param {object} recipe
+ * @param {number} nbPortions
+ *
+ */
+export function scaleRecipe(recipe, nbPortions) {
+  const keys = { ...recipe };
+  Object.keys(keys).forEach((key) => {
+    Object(keys)[key] *= nbPortions / 2;
+  });
+
+  return keys;
 }
