@@ -16,42 +16,35 @@
  * @return {string}
  */
 export function cookingStatus(timeLeft) {
-    if (timeLeft == 0)
-    {
-        return "Lasagna is done."
-    }
-    else if (timeLeft == null)
-    {
-        return "You forgot to set the timer."
-    }
-    else
-    {
-        return "Not done, please wait."
-    }
+  if (timeLeft == 0) {
+    return "Lasagna is done.";
+  } else if (timeLeft == null) {
+    return "You forgot to set the timer.";
+  } else {
+    return "Not done, please wait.";
+  }
 }
 
 /**
- * @param {string[]} quantities
+ * @param {string[]} layers
  * @returns {object}
  */
-export function quantities(quantities) {
-    var nbLayerNoodles = 0
-    var nbLayerSauce = 0
-
-    quantities.forEach(layer => {
-        if (layer == 'noodles') {
-            nbLayerNoodles += 50
-        }
-
-        else if (layer == 'sauce') {
-            nbLayerSauce += 0.2
-        }
-    });
-
-    return {
-        noodles : nbLayerNoodles,
-        sauce : nbLayerSauce
+export function quantities(layers) {
+  var nbLayerNoodles = 0;
+  var nbLayerSauce = 0;
+  console.log(">>>>>>>>>>>>>>>");
+  layers.forEach((layer) => {
+    if (layer == "noodles") {
+      nbLayerNoodles += 50;
+    } else if (layer == "sauce") {
+      nbLayerSauce += 0.2;
     }
+  });
+
+  return {
+    noodles: nbLayerNoodles,
+    sauce: nbLayerSauce,
+  };
 }
 
 /**
@@ -60,18 +53,18 @@ export function quantities(quantities) {
  * @return {number}
  */
 export function preparationTime(layers, avgPrepTime) {
-    if (avgPrepTime == null) {
-        avgPrepTime = 2
-    }
+  if (avgPrepTime == null) {
+    avgPrepTime = 2;
+  }
 
-    return layers.length * avgPrepTime
+  return layers.length * avgPrepTime;
 }
 
 /**
  * @param {number[]} friendsList
  * @param {number[]} myList
- * 
+ *
  */
 export function addSecretIngredient(friendsList, myList) {
-    myList.push(friendsList[friendsList.length - 1])
+  myList.push(friendsList[friendsList.length - 1]);
 }
