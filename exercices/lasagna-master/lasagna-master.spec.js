@@ -1,9 +1,9 @@
 import { describe, expect, test } from '@jest/globals';
 import {
-  // addSecretIngredient,
+  addSecretIngredient,
   cookingStatus,
   preparationTime,
-  // quantities,
+  quantities,
   // scaleRecipe,
 } from './lasagna-master';
 
@@ -77,85 +77,85 @@ describe('preparationTime', () => {
   });
 });
 
-// describe('quantities', () => {
-//   test('calculates the amounts of noodles and sauce correctly', () => {
-//     const fewLayers = ['noodles', 'sauce', 'noodles'];
-//     expectObjectsToBeEqual(quantities(fewLayers), { noodles: 100, sauce: 0.2 });
+describe('quantities', () => {
+  test('calculates the amounts of noodles and sauce correctly', () => {
+    const fewLayers = ['noodles', 'sauce', 'noodles'];
+    expectObjectsToBeEqual(quantities(fewLayers), { noodles: 100, sauce: 0.2 });
 
-//     const manyLayers = [
-//       'sauce',
-//       'noodles',
-//       'béchamel',
-//       'meat',
-//       'mozzarella',
-//       'noodles',
-//       'ricotta',
-//       'eggplant',
-//       'béchamel',
-//       'noodles',
-//       'sauce',
-//       'mozzarella',
-//     ];
-//     expectObjectsToBeEqual(quantities(manyLayers), {
-//       noodles: 150,
-//       sauce: 0.4,
-//     });
-//   });
+    const manyLayers = [
+      'sauce',
+      'noodles',
+      'béchamel',
+      'meat',
+      'mozzarella',
+      'noodles',
+      'ricotta',
+      'eggplant',
+      'béchamel',
+      'noodles',
+      'sauce',
+      'mozzarella',
+    ];
+    expectObjectsToBeEqual(quantities(manyLayers), {
+      noodles: 150,
+      sauce: 0.4,
+    });
+  });
 
-//   test('works if there are no noodles or no sauce found in the layers', () => {
-//     const noNoodles = ['sauce', 'béchamel', 'sauce', 'meat', 'sauce'];
-//     expectObjectsToBeEqual(quantities(noNoodles), { noodles: 0, sauce: 0.6 });
+  test('works if there are no noodles or no sauce found in the layers', () => {
+    const noNoodles = ['sauce', 'béchamel', 'sauce', 'meat', 'sauce'];
+    expectObjectsToBeEqual(quantities(noNoodles), { noodles: 0, sauce: 0.6 });
 
-//     const noSauce = ['eggplant', 'béchamel', 'noodles', 'béchamel'];
-//     expectObjectsToBeEqual(quantities(noSauce), { noodles: 50, sauce: 0 });
-//   });
+    const noSauce = ['eggplant', 'béchamel', 'noodles', 'béchamel'];
+    expectObjectsToBeEqual(quantities(noSauce), { noodles: 50, sauce: 0 });
+  });
 
-//   test('works with an empty layers array', () => {
-//     expect(quantities([])).toEqual({ noodles: 0, sauce: 0 });
-//   });
-// });
+  test('works with an empty layers array', () => {
+    expect(quantities([])).toEqual({ noodles: 0, sauce: 0 });
+  });
+});
 
-// describe('addSecretIngredient', () => {
-//   test('adds the secret ingredient to the second array', () => {
-//     const friendsList = ['sauce', 'noodles', 'béchamel', 'marjoram'];
-//     const myList = ['sauce', 'noodles', 'meat', 'tomatoes'];
-//     addSecretIngredient(friendsList, myList);
+describe('addSecretIngredient', () => {
+  test('adds the secret ingredient to the second array', () => {
+    const friendsList = ['sauce', 'noodles', 'béchamel', 'marjoram'];
+    const myList = ['sauce', 'noodles', 'meat', 'tomatoes'];
+    addSecretIngredient(friendsList, myList);
 
-//     const expected = ['sauce', 'noodles', 'meat', 'tomatoes', 'marjoram'];
-//     expect(myList).toEqual(expected);
-//   });
+    const expected = ['sauce', 'noodles', 'meat', 'tomatoes', 'marjoram'];
+    expect(myList).toEqual(expected);
+  });
 
-//   test('does not modify the first array', () => {
-//     const createFriendsList = () => [
-//       'noodles',
-//       'tomatoes',
-//       'sauce',
-//       'meat',
-//       'mozzarella',
-//       'eggplant',
-//       'ricotta',
-//       'parmesan',
-//     ];
+  test('does not modify the first array', () => {
+    const createFriendsList = () => [
+      'noodles',
+      'tomatoes',
+      'sauce',
+      'meat',
+      'mozzarella',
+      'eggplant',
+      'ricotta',
+      'parmesan',
+    ];
 
-//     const friendsList = createFriendsList();
-//     const myList = ['ricotta', 'béchamel', 'sauce', 'noodles', 'meat'];
-//     addSecretIngredient(friendsList, myList);
+    const friendsList = createFriendsList();
+    const myList = ['ricotta', 'béchamel', 'sauce', 'noodles', 'meat'];
+    addSecretIngredient(friendsList, myList);
 
-//     expect(friendsList).toEqual(createFriendsList());
-//   });
+    expect(friendsList).toEqual(createFriendsList());
+  });
 
-//   test('does not return anything', () => {
-//     const friendsList = [
-//       'sauce',
-//       'noodles',
-//       'béchamel',
-//       'mozzarella',
-//       'mustard',
-//     ];
-//     const myList = ['sauce', 'noodles', 'tomatoes'];
-//     expect(addSecretIngredient(friendsList, myList)).toBeUndefined();
-//   });
-// });
+  test('does not return anything', () => {
+    const friendsList = [
+      'sauce',
+      'noodles',
+      'béchamel',
+      'mozzarella',
+      'mustard',
+    ];
+    const myList = ['sauce', 'noodles', 'tomatoes'];
+    expect(addSecretIngredient(friendsList, myList)).toBeUndefined();
+  });
+});
 
 // describe('scaleRecipe', () => {
 //   test('scales up correctly', () => {

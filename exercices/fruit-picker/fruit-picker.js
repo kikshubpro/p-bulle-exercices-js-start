@@ -33,14 +33,7 @@ export function onError() {
  * @return void
  */
 export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
-  if (query.variety != "" && query.quantity != 0)
-  {
-    onSuccessCallback()
-  }
-  else
-  {
-    onErrorCallback()
-  }
+  order(query, onSuccessCallback, onErrorCallback)
 }
 
 /**
@@ -49,5 +42,5 @@ export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
  * @return void
  */
 export function postOrder(variety, quantity) {
-  //implement the postOrder function to create a query and order
+  order({quantity : quantity, variety : variety}, onSuccess, onError)
 }

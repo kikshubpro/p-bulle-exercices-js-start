@@ -31,6 +31,30 @@ export function cookingStatus(timeLeft) {
 }
 
 /**
+ * @param {string[]} quantities
+ * @returns {object}
+ */
+export function quantities(quantities) {
+    var nbLayerNoodles = 0
+    var nbLayerSauce = 0
+
+    quantities.forEach(layer => {
+        if (layer == 'noodles') {
+            nbLayerNoodles += 50
+        }
+
+        else if (layer == 'sauce') {
+            nbLayerSauce += 0.2
+        }
+    });
+
+    return {
+        noodles : nbLayerNoodles,
+        sauce : nbLayerSauce
+    }
+}
+
+/**
  * @param {number[]} layers
  * @param {number} avgPrepTime
  * @return {number}
@@ -41,4 +65,13 @@ export function preparationTime(layers, avgPrepTime) {
     }
 
     return layers.length * avgPrepTime
+}
+
+/**
+ * @param {number[]} friendsList
+ * @param {number[]} myList
+ * 
+ */
+export function addSecretIngredient(friendsList, myList) {
+    myList.push(friendsList[friendsList.length - 1])
 }
