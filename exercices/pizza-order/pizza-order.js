@@ -11,7 +11,25 @@
  * @returns {number} the price of the pizza
  */
 export function pizzaPrice(pizza, ...extras) {
-  throw new Error('Remove this line and implement the function');
+  let price = 0;
+
+  if (pizza == "Margherita") {
+    price += 7;
+  } else if (pizza == "Caprese") {
+    price += 9;
+  } else if (pizza == "Formaggio") {
+    price += 10;
+  }
+
+  extras.forEach((extra) => {
+    if (extra == "ExtraSauce") {
+      price++;
+    } else if (extra == "ExtraToppings") {
+      price += 2;
+    }
+  });
+
+  return price;
 }
 
 /**
@@ -24,5 +42,11 @@ export function pizzaPrice(pizza, ...extras) {
  * @returns {number} the price of the total order
  */
 export function orderPrice(pizzaOrders) {
-  throw new Error('Remove this line and implement the function');
+  let totalPrice = 0;
+
+  pizzaOrders.forEach((pizzaOrder) => {
+    totalPrice += pizzaPrice(pizzaOrder.pizza, ...pizzaOrder.extras);
+  });
+
+  return totalPrice;
 }
