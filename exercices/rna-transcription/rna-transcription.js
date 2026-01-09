@@ -3,6 +3,25 @@
 // convenience to get you started writing code faster.
 //
 
-export const toRna = () => {
-  throw new Error('Remove this line and implement the function');
+export const toRna = (adn) => {
+  let result = ""
+
+  for (let nucleotide of adn) {
+    switch (nucleotide) {
+      case "G":
+        result += "C"
+        continue
+      case "C":
+        result += "G"
+        continue
+      case "T":
+        result += "A"
+        continue
+      case "A":
+        result += "U"
+        continue
+    }
+  }
+
+  return result
 };
