@@ -13,3 +13,8 @@ Je constate que la totalité des entrées de votre journal sont liées à des co
     - Investir du temps supplémentaire pour rattraper le retard accumulé
     - Documenter ces efforts dans votre journal de travail avec précision
     - Assurer lors du deuxième test
+
+
+## Final
+
+- Voir grille
